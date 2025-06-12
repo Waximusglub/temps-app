@@ -1,12 +1,17 @@
-# React + Vite
+# 🌤️ Temps App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicació web feta amb **React**, **Tailwind CSS** i la **API d'OpenWeatherMap** per consultar el temps d'una localització de manera ràpida i senzilla.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalitats
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔍 Buscador central per localitzar ciutats
+- ☁️ Mostra informació del temps actual (temperatura, descripció, humitat, etc.)
+- 🎨 Disseny net i adaptatiu amb Tailwind CSS
+- ⚡ Ràpida gràcies a Vite i React
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologies usades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/) – Interfície d'usuari
+- [Tailwind CSS](https://tailwindcss.com/) – Estils moderns i responsius
+- [Vite](https://vitejs.dev/) – Eina de desenvolupament
+- [OpenWeatherMap API](https://openweathermap.org/api) – Dades meteorològiques
