@@ -1,0 +1,102 @@
+/* App.css */
+
+body {
+
+    font-family: sans-serif;
+
+    min-height: 100vh;
+    background-color: rgb(27, 27, 27);
+
+
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+
+
+    width: 35vw;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 1rem;
+    margin: 0 1rem 1rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav:has(input:focus) {
+
+    width: 50vw;
+}
+
+.nav button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    color: white;
+}
+
+.nav input {
+
+    outline: none;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 150px;
+}
+
+.nav input:focus {
+
+    border-radius: 0.5rem;
+    width: 70%;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav button {
+    outline: none;
+    border: none;
+    color: rgb(122, 122, 122);
+    width: 3rem;
+    padding: 0.5rem;
+
+    background-color: rgba(255, 255, 255, 0.2);
+
+    border-radius: 0.5rem;
+}
+
+.nav button:hover {
+    /* background-color: rgb(220, 228, 235); */
+
+}
+
+.weather {
+    width: 60%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+
+}
+
+.weather-card {
+    background-color: rgb(255, 225, 224);
+
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
