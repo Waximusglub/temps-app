@@ -6,8 +6,7 @@ body {
 
     min-height: 100vh;
     background-color: rgb(27, 27, 27);
-
-
+    
 }
 
 .app-container {
@@ -16,6 +15,9 @@ body {
     align-items: center;
 }
 
+/* ########### */
+/* NAV */
+/* ########### */
 .nav {
     display: flex;
     justify-content: space-between;
@@ -84,19 +86,92 @@ body {
     /* background-color: rgb(220, 228, 235); */
 
 }
+/* ########### */
+/* ########### */
 
+
+/* ########### */
+/* Weather */
+/* ########### */
 .weather {
-    width: 60%;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
 
 }
 
 .weather-card {
-    background-color: rgb(255, 225, 224);
+    width: 8rem;
+    height: 16rem;
+    
+    background: #f8f9fa;
 
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+
 }
+
+.current .weather-card{
+    width: 12rem;
+    height: 24rem;
+    gap: 1rem;
+    
+}
+
+.current .weather-card .card-info p{
+    font-size: 9.5rem; 
+}
+
+
+.forecast{
+    display: flex;
+    gap: 1rem;
+}
+
+
+.card-title{
+    color: #DF2D2D;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.card-title h2{
+    margin: 0;
+}
+
+.card-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info p{
+    font-size: 5.5rem; 
+    color: #DF2D2D;
+
+    margin: 0;
+}
+
+.card-info span{
+    font-size: 1rem;
+    color: #DF2D2D;
+
+    margin: 0;
+}
+/* ########### */
+/* ########### */
+
+/* ########### */
+/* Loading */
+/* ########### */
+
+/* ########### */
+/* ########### */
+
+/* ########### */
+/* Error */
+/* ########### */
+
+/* ########### */
+/* ########### */

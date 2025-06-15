@@ -1,6 +1,10 @@
 import { useWeather } from "./hooks/useWeather";
 import './App.css'
 
+import cardImage from "./assets/card_s.png";
+import cardImagec from "./assets/card_c.png";
+import cardImager from "./assets/card_r.png";
+
 export default function App() {
   const {
     location,
@@ -11,6 +15,12 @@ export default function App() {
     fetchByLocation,
     fetchByGeo,
   } = useWeather();
+
+  const getCardImage = (text) => {
+    if (text.includes("rain")) return cardImager;
+    if (text.includes("cloud")) return cardImagec;
+    return cardImage;
+  };
 
   return (
     <div className="app-container">
@@ -53,13 +63,43 @@ export default function App() {
         </div>
       ) : weather ? (
         <div className="weather">
-          <div className='weather-card'>
 
-            <img src={weather.current.condition.icon} alt="Weatehr Icon" />
+          <div className="current">
+            <div className='weather-card' style={{ backgroundImage: `url(${cardImage})`, backgroundSize: "cover", backgroundPositionX: "center",  }}>
+            
+            <div className='card-title'>
+              <h2>{weather.current.condition.text}</h2>
+              <p>{weather.location.localtime}</p>
+            </div>
+            <div className='card-info'>
+              <p>{Math.round(weather.current.temp_c)}</p>
+              
+            </div>
 
-            <p>{Math.round(weather.current.temp_c)}ºC</p>
-            <p>{Math.round(weather.current.feelslike_c)}ºC</p>
-            <p>{Math.round(weather.current.humidity)}%</p>
+          </div>
+          </div>
+
+          <div className="forecast">
+            {weather.forecast.forecastday.slice(1).map((day,i) => (
+              <div
+                key={i}
+                className="weather-card"
+                style={{
+                  backgroundImage: `url(${getCardImage(day.day.condition.text.toLowerCase())})`,
+                  backgroundPositionX: "center",
+                  backgroundPositiony: "y-end",
+                  backgroundSize: "cover",
+                }}
+              >
+                <div className="card-title">
+                  <h2>{day.day.condition.text}</h2>
+                  <p>{day.date}</p>
+                </div>
+                <div className="card-info">
+                  <p>{Math.round(day.day.avgtemp_c)}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       ) : null}

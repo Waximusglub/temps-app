@@ -14,7 +14,7 @@ export function useWeather() {
     try {
       setError("");
       setLoading(true);
-      console.log(API_KEY);
+
       const res = await axios.get(
         `https://api.weatherapi.com/v1/forecast.json`,
         {
