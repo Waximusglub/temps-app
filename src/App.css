@@ -31,7 +31,6 @@ body {
 
 .nav-header {
     display: flex;
-
     justify-content: space-between;
     width: 20rem;
     padding: 1rem;
@@ -116,7 +115,6 @@ body {
     padding: 0.25rem 0.5rem;
     gap: 1rem;
 
-
 }
 
 .weather-card__header {
@@ -171,39 +169,31 @@ body {
 /* Footer */
 /* ================================= */
 
-footer{
+footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0.5rem 1rem;
-    
-}
-
-
-.footer__left p{
-    margin: 0;
-    color: #2c2c2c
-}
-
-.footer-links {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-
-    width: 6rem;
-    height: 2.5rem;
 
 }
 
-.footer a,p {
+.footer a,
+p {
     text-decoration: none;
-    color: #d9d9d9
+    color: #727272;
+    margin: 0;
 }
 
-.footer-links svg {
+.footer svg {
     width: 1.4rem;
     height: 1.4rem;
-    color: white;
+    color: #727272;
+
+}
+
+.footer__right a {
+    display: flex;
+    align-items: center;
 
 }
 
@@ -220,6 +210,10 @@ footer{
 
     color: white;
 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+    padding: 2rem;
+    border-radius: 0.5rem;
 
 }
 
@@ -229,6 +223,7 @@ footer{
     border-radius: 50%;
     width: 50px;
     height: 50px;
+    margin: 1rem;
     animation: spin 2s linear infinite;
 }
 
@@ -250,4 +245,10 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.error-screen svg {
+    color: white;
 }
