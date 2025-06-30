@@ -22,14 +22,13 @@ export function useWeather() {
             key: API_KEY,
             q: location,
             days: 7,
-            lang: "ca",
           },
         }
       );
       console.log(res.data);
       setWeather(res.data);
     } catch {
-      setError("Ciutat no trobada.");
+      setError("Location not found.");
       setWeather(null);
     } finally {
       setLoading(false);
@@ -38,7 +37,7 @@ export function useWeather() {
 
   const fetchByGeo = () => {
     if (!navigator.geolocation) {
-      setError("Geolocalització no suportada.");
+      setError("Geolocalitzation not suported.");
       return;
     }
 
@@ -55,20 +54,19 @@ export function useWeather() {
                 key: API_KEY,
                 q: `${latitude},${longitude}`,
                 days: 7,
-                lang: "ca",
               },
             }
           );
           setWeather(res.data);
           setLocation(res.data.location.name);
         } catch {
-          setError("No s'ha pogut carregar la localització.");
+          setError("Couldn't find the city location.");
           setWeather(null);
         } finally {
           setLoading(false);
         }
       },
-      () => setError("Permís rebutjat.")
+      () => setError("Privilage error")
     );
   };
 

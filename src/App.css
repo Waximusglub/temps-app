@@ -1,48 +1,85 @@
-/* App.css */
+/* ================================= */
+/* GLOBAL */
+/* ================================= */
 
 body {
-
     font-family: sans-serif;
-
     min-height: 100vh;
     background-color: rgb(27, 27, 27);
-    
 }
 
 .app-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+}
+
+.nav,
+.main {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-/* ########### */
-/* NAV */
-/* ########### */
-.nav {
+/* ================================= */
+/* NAVIGATION BAR */
+/* ================================= */
+
+
+.nav-header {
     display: flex;
+
     justify-content: space-between;
-
-
-    width: 35vw;
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-
+    width: 20rem;
+    padding: 1rem;
+    margin: 0 1rem 1rem;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
-    padding: 1rem;
-    margin: 0 1rem 1rem 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.6s ease;
+}
+
+.nav-header:has(input:focus) {
+    width: 35vw;
+}
+
+.nav input {
+    width: 150px;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
     transition: all 0.3s ease;
 }
 
-.nav:has(input:focus) {
-
-    width: 50vw;
+.nav input:focus {
+    width: 70%;
+    border-radius: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .nav button {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 3rem;
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    color: rgb(122, 122, 122);
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav button:hover {
+
+    background-color: rgba(255, 255, 255, 0.4)
 }
 
 .nav svg {
@@ -51,127 +88,166 @@ body {
     color: white;
 }
 
-.nav input {
+/* ================================= */
+/* Main */
+/* ================================= */
 
-    outline: none;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    background-color: rgba(255, 255, 255, 0.1);
-    color: white;
-    width: 150px;
-}
-
-.nav input:focus {
-
-    border-radius: 0.5rem;
-    width: 70%;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.nav button {
-    outline: none;
-    border: none;
-    color: rgb(122, 122, 122);
-    width: 3rem;
-    padding: 0.5rem;
-
-    background-color: rgba(255, 255, 255, 0.2);
-
-    border-radius: 0.5rem;
-}
-
-.nav button:hover {
-    /* background-color: rgb(220, 228, 235); */
-
-}
-/* ########### */
-/* ########### */
-
-
-/* ########### */
-/* Weather */
-/* ########### */
 .weather {
-
     display: flex;
     flex-direction: column;
-    gap: 5rem;
 
+}
+
+.current-weather {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    gap: 1rem;
 }
 
 .weather-card {
-    width: 8rem;
-    height: 16rem;
-    
-    background: #f8f9fa;
 
-    padding: 0.25rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-}
-
-.current .weather-card{
     width: 12rem;
     height: 24rem;
+    padding: 0.25rem 0.5rem;
     gap: 1rem;
-    
+
+
 }
 
-.current .weather-card .card-info p{
-    font-size: 9.5rem; 
+.weather-card__header {
+    margin: 0;
 }
 
+.weather-card__temperature p {
+    font-size: 9.5rem;
+    margin: 0;
 
-.forecast{
+}
+
+.weather-details {
+    background-color: #d9d9d9;
+    grid-column: span 2;
+}
+
+/* ================================= */
+/* Main-CARD */
+/* ================================= */
+
+.card-title {
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    color: #DF2D2D;
 }
 
+.card-title h2 {
+    margin: 0;
+}
 
-.card-title{
+.card-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-info p {
+    margin: 0;
+    font-size: 5.5rem;
     color: #DF2D2D;
+}
+
+.card-info span {
+    margin: 0;
+    font-size: 1rem;
+    color: #DF2D2D;
+}
+
+/* ================================= */
+/* Footer */
+/* ================================= */
+
+footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    margin: 0.5rem 1rem;
+    
 }
-.card-title h2{
+
+
+.footer__left p{
     margin: 0;
+    color: #2c2c2c
 }
 
-.card-info{
+.footer-links {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+
+    width: 6rem;
+    height: 2.5rem;
+
 }
 
-.card-info p{
-    font-size: 5.5rem; 
-    color: #DF2D2D;
-
-    margin: 0;
+.footer a,p {
+    text-decoration: none;
+    color: #d9d9d9
 }
 
-.card-info span{
-    font-size: 1rem;
-    color: #DF2D2D;
+.footer-links svg {
+    width: 1.4rem;
+    height: 1.4rem;
+    color: white;
 
-    margin: 0;
 }
-/* ########### */
-/* ########### */
 
-/* ########### */
-/* Loading */
-/* ########### */
+/* ================================= */
+/* LOADING STATE */
+/* ================================= */
 
-/* ########### */
-/* ########### */
+.loading-screen {
 
-/* ########### */
-/* Error */
-/* ########### */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-/* ########### */
-/* ########### */
+
+    color: white;
+
+
+}
+
+.loader-wheel {
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #fa8576;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================================= */
+/* ERROR STATE */
+/* ================================= */
+
+.error-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
