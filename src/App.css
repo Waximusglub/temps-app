@@ -91,7 +91,7 @@ body {
 @media (max-width: 768px) {
 
     .nav-header{
-        width: 40%;
+        width: 50%;
         margin: 0;
     }
     .nav-header:has(input:focus) {
