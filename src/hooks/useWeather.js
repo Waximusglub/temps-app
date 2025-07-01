@@ -21,7 +21,7 @@ export function useWeather() {
           params: {
             key: API_KEY,
             q: location,
-            days: 7,
+
           },
         }
       );
@@ -63,7 +63,7 @@ export function useWeather() {
           setError("Couldn't find the city location.");
           setWeather(null);
         } finally {
-          // setLoading(false);
+          setLoading(false);
         }
       },
       () => setError("Privilage error")

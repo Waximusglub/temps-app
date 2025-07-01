@@ -17,6 +17,7 @@ body {
     grid-template-columns: 1fr;
 }
 
+
 .nav,
 .main {
     display: flex;
@@ -91,29 +92,35 @@ body {
 /* Main */
 /* ================================= */
 
+main{
+    height: 95vh;
+    overflow-y: scroll;
+}
+
 .weather {
     display: flex;
     flex-direction: column;
+    color: white;
 
 }
 
-.current-weather {
+.weather-current {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-    gap: 1rem;
+    gap: 4rem;
 }
 
-.weather-card {
+.current-weather-card {
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+
 
     width: 12rem;
     height: 24rem;
     padding: 0.25rem 0.5rem;
-    gap: 1rem;
+
 
 }
 
@@ -121,49 +128,73 @@ body {
     margin: 0;
 }
 
-.weather-card__temperature p {
+
+.weather-card__header h2 {
     font-size: 9.5rem;
     margin: 0;
+    font-weight: 400;
 
 }
+
+.weather-card__header p {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: 400;
+
+}
+
+.weather-card__header span {
+    font-size: 3rem;
+
+}
+
+
+/* ================================= */
+/* Main-details */
+/* ================================= */
 
 .weather-details {
-    background-color: #d9d9d9;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     grid-column: span 2;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+
 }
 
-/* ================================= */
-/* Main-CARD */
-/* ================================= */
-
-.card-title {
+.details-card{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    color: #DF2D2D;
-}
-
-.card-title h2 {
-    margin: 0;
-}
-
-.card-info {
-    display: flex;
     justify-content: center;
+    padding: 0;
+    
+}
+
+
+.details-card__header{
+    display: flex;
     align-items: center;
+    justify-content: center;
+
+    fill: white;
+    color: white;
+
 }
 
-.card-info p {
-    margin: 0;
-    font-size: 5.5rem;
-    color: #DF2D2D;
+.details-card__header svg{
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
-.card-info span {
-    margin: 0;
-    font-size: 1rem;
-    color: #DF2D2D;
+.details-card__header h2{
+    font-size: 22px;
+    margin: 0 4px;
 }
+
+
 
 /* ================================= */
 /* Footer */
@@ -184,18 +215,21 @@ p {
     margin: 0;
 }
 
-.footer svg {
-    width: 1.4rem;
-    height: 1.4rem;
-    color: #727272;
-
-}
-
-.footer__right a {
+.footer__right {
     display: flex;
     align-items: center;
+    
+}
+
+.footer__right svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: #727272;
 
 }
+
+
+
 
 /* ================================= */
 /* LOADING STATE */
@@ -225,6 +259,10 @@ p {
     height: 50px;
     margin: 1rem;
     animation: spin 2s linear infinite;
+}
+
+.loading-screen p{
+    color: #727272;
 }
 
 @keyframes spin {
