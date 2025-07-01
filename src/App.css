@@ -88,11 +88,31 @@ body {
     color: white;
 }
 
+@media (max-width: 768px) {
+
+    .nav-header{
+        width: 40%;
+        margin: 0;
+    }
+    .nav-header:has(input:focus) {
+        width: 60%;
+    }
+    .nav-header input{
+        width: 5rem;
+
+    }
+    .nav button{
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+
 /* ================================= */
 /* Main */
 /* ================================= */
 
-main{
+main {
     height: 95vh;
     overflow-y: scroll;
 }
@@ -111,6 +131,23 @@ main{
     gap: 4rem;
 }
 
+@media (max-width: 768px) {
+    .weather {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+
+    }
+
+    .weather-current {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 2rem 0rem;
+    }
+}
+
 .current-weather-card {
 
     display: flex;
@@ -118,8 +155,9 @@ main{
 
 
     width: 12rem;
-    height: 24rem;
+    height: 16rem;
     padding: 0.25rem 0.5rem;
+    margin: 1rem;
 
 
 }
@@ -164,17 +202,17 @@ main{
 
 }
 
-.details-card{
+.details-card {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0;
-    
+
 }
 
 
-.details-card__header{
+.details-card__header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -184,16 +222,34 @@ main{
 
 }
 
-.details-card__header svg{
+.details-card__header svg {
     width: 2.5rem;
     height: 2.5rem;
 }
 
-.details-card__header h2{
+.details-card__header h2 {
     font-size: 22px;
     margin: 0 4px;
 }
 
+@media (max-width: 768px) {
+    .weather-details {
+
+        grid-template-columns: 1fr 1fr;
+        padding: 1rem;
+
+    }
+
+    .details-card__header svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .details-card__header h2 {
+        font-size: 16px;
+        margin: 0 4px;
+    }
+}
 
 
 /* ================================= */
@@ -218,7 +274,7 @@ p {
 .footer__right {
     display: flex;
     align-items: center;
-    
+
 }
 
 .footer__right svg {
@@ -261,7 +317,7 @@ p {
     animation: spin 2s linear infinite;
 }
 
-.loading-screen p{
+.loading-screen p {
     color: #727272;
 }
 
